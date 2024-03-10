@@ -2,7 +2,9 @@
 name = "accogen"
 version = "0.1.0"
 description = "Add your description here"
-authors = ["NShohei"]
+authors = [
+    { name = "NShohei", email = "nodasyohei4130@gmail.com" }
+]
 dependencies = [
     "streamlit>=1.32.0",
     "pydantic>=2.6.3",
@@ -20,6 +22,7 @@ build-backend = "hatchling.build"
 managed = true
 dev-dependencies = [
     "ruff>=0.3.2",
+    "Pyinstaller>=6.5.0",
 ]
 
 [tool.hatch.metadata]

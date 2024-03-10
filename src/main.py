@@ -20,23 +20,22 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-if __name__ == "__main__":
-    logger.info("App Init")
+logger.info("App Init")
 
-    if st.session_state.get("App") is None:
-        sm = SessionManager()
+if st.session_state.get("App") is None:
+    sm = SessionManager()
 
-        gen = LengthBasedAccountNameGenerator()
+    gen = LengthBasedAccountNameGenerator()
 
-        faker_acc_gen = FakerBasedAccountNameGenerator()
+    faker_acc_gen = FakerBasedAccountNameGenerator()
 
-        app = App(gen, faker_acc_gen, sm)
+    app = App(gen, faker_acc_gen, sm)
 
-        st.session_state["App"] = app
+    st.session_state["App"] = app
 
-    else:
-        app = st.session_state.get("App")
+else:
+    app = st.session_state.get("App")
 
-    app.render()
+app.render()
 
-    logger.info("App Exit")
+logger.info("App Exit")
